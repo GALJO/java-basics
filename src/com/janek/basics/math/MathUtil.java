@@ -2,6 +2,11 @@ package com.janek.basics.math;
 
 public class MathUtil {
 
+    public static final String PLUS = "+";
+    public static final String MINUS = "-";
+    public static final String MULTIPLY = "*";
+    public static final String DIVIDE = "/";
+
     /**
      * Adds two numbers
      */
@@ -41,13 +46,13 @@ public class MathUtil {
      */
     public static double doCalculation(double one, String symbol, double two) {
         switch (symbol) {
-            case "+":
+            case PLUS:
                 return addNumbers(one, two);
-            case "-":
+            case MINUS:
                 return subtractNumbers(one, two);
-            case "*":
+            case MULTIPLY:
                 return multiplyNumbers(one, two);
-            case "/":
+            case DIVIDE:
                 return divideNumbers(one, two);
             default:
                 throw new IllegalArgumentException("Unsupported symbol");
