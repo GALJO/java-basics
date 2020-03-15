@@ -2,6 +2,11 @@ package com.janek.basics.math;
 
 public class MathUtil {
 
+    public static final String PLUS = "+";
+    public static final String MINUS = "-";
+    public static final String MULTIPLY = "*";
+    public static final String DIVIDE = "/";
+
     /**
      * Adds two numbers
      */
@@ -28,5 +33,29 @@ public class MathUtil {
      */
     public static double divideNumbers(double dividend, double divider) {
         return dividend / divider;
+    }
+
+
+    /**
+     * Calculates numbers
+     *
+     * @param one    first number
+     * @param symbol mathematical operation (+ - * /)
+     * @param two    second number
+     * @return calculated double number
+     */
+    public static double doCalculation(double one, String symbol, double two) {
+        switch (symbol) {
+            case PLUS:
+                return addNumbers(one, two);
+            case MINUS:
+                return subtractNumbers(one, two);
+            case MULTIPLY:
+                return multiplyNumbers(one, two);
+            case DIVIDE:
+                return divideNumbers(one, two);
+            default:
+                throw new IllegalArgumentException("Unsupported symbol");
+        }
     }
 }
