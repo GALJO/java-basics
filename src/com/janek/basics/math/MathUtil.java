@@ -29,4 +29,28 @@ public class MathUtil {
     public static double divideNumbers(double dividend, double divider) {
         return dividend / divider;
     }
+
+
+    /**
+     * Calculates numbers
+     *
+     * @param one    first number
+     * @param symbol mathematical operation (+ - * /)
+     * @param two    second number
+     * @return calculated double number
+     */
+    public static double doCalculation(double one, String symbol, double two) {
+        switch (symbol) {
+            case "+":
+                return addNumbers(one, two);
+            case "-":
+                return subtractNumbers(one, two);
+            case "*":
+                return multiplyNumbers(one, two);
+            case "/":
+                return divideNumbers(one, two);
+            default:
+                throw new IllegalArgumentException("Unsupported symbol");
+        }
+    }
 }
