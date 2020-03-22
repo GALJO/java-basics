@@ -47,7 +47,10 @@ public class CalcGold {
     private static void validateNumber(String[] args) {
         for (int i = 0; i < args.length; i += 2) {
             String number = args[i];
-            isNumber(number);
+            if (!isNumber(number)) {
+                out.println(format("Podałeś nieprawidłową liczbę! (%s)", number));
+                exit(VALIDATION_EXIT_CODE);
+            }
         }
     }
 
@@ -65,8 +68,15 @@ public class CalcGold {
     }
 
     private static void validateArgsNumber(String[] args) {
-        isEven(args.length < 3, "Podałeś za mało argumentów!");
-        isEven(args.length % 2 == 0, "Podałeś nieprawidłową liczbę argumentów!");
+        if (args.length < 3) {
+            out.println("Podałeś za mało argumentów!");
+            exit(VALIDATION_EXIT_CODE);
+        }
+
+        if (isEven(args.length)) {
+            out.println("Podałeś nieprawidłową liczbę argumentów!");
+            exit(VALIDATION_EXIT_CODE);
+        }
     }
 
 

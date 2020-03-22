@@ -67,19 +67,19 @@ public class MathUtil {
         }
     }
 
-    public static void isEven(boolean b, String s) {
-        if (b) {
-            out.println(s);
-            exit(VALIDATION_EXIT_CODE);
+    public static boolean isEven(int number) {
+        if (number % 2 == 0) {
+            return true;
         }
+        return false;
     }
 
-    public static void isNumber(String number) {
+    public static boolean isNumber(String text) {
         try {
-            parseDouble(number);
+            parseDouble(text);
         } catch (NumberFormatException e) {
-            out.println(format("Wpisałeś nieprawidłową liczbę! (%s)", number));
-            exit(VALIDATION_EXIT_CODE);
+            return false;
         }
+        return true;
     }
 }
