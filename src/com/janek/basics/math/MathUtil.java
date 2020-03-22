@@ -1,5 +1,13 @@
 package com.janek.basics.math;
 
+import com.janek.basics.CalcGold;
+
+import static com.janek.basics.CalcGold.VALIDATION_EXIT_CODE;
+import static java.lang.Double.parseDouble;
+import static java.lang.String.format;
+import static java.lang.System.exit;
+import static java.lang.System.out;
+
 public class MathUtil {
 
     public static final String PLUS = "+";
@@ -56,6 +64,22 @@ public class MathUtil {
                 return divideNumbers(one, two);
             default:
                 throw new IllegalArgumentException("Unsupported symbol");
+        }
+    }
+
+    public static void isEven(boolean b, String s) {
+        if (b) {
+            out.println(s);
+            exit(VALIDATION_EXIT_CODE);
+        }
+    }
+
+    public static void isNumber(String number) {
+        try {
+            parseDouble(number);
+        } catch (NumberFormatException e) {
+            out.println(format("Wpisałeś nieprawidłową liczbę! (%s)", number));
+            exit(VALIDATION_EXIT_CODE);
         }
     }
 }

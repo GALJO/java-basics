@@ -24,7 +24,7 @@ public class CalcGold {
         validateSymbol(args);
         validateNumber(args);
 
-        double result = calculateResult(args);
+        var result = calculateResult(args);
         printResult(args, result);
     }
 
@@ -38,26 +38,21 @@ public class CalcGold {
     private static double calculateResult(String[] args) {
         double result = doCalculation(parseDouble(args[0]), parseSymbol(args[1]), parseDouble(args[2]));
 
-        for (int i = 3; i < args.length; i = i + 2) {
+        for (int i = 3; i < args.length; i += 2) {
             result = doCalculation(result, parseSymbol(args[i]), parseDouble(args[i + 1]));
         }
         return result;
     }
 
     private static void validateNumber(String[] args) {
-        for (int i = 0; i < args.length; i = i + 2) {
+        for (int i = 0; i < args.length; i += 2) {
             String number = args[i];
-            try {
-                parseDouble(number);
-            } catch (NumberFormatException e) {
-                out.println(format("Wpisałeś nieprawidłową liczbę! (%s)", number));
-                exit(VALIDATION_EXIT_CODE);
-            }
+            isNumber(number);
         }
     }
 
     private static void validateSymbol(String[] args) {
-        for (int i = 1; i < args.length; i = i + 2) {
+        for (int i = 1; i < args.length; i += 2) {
             String symbol = args[i];
             if (!(symbol.equals(INPUT_PLUS_SYMBOL) || symbol.equals(INPUT_MINUS_SYMBOL)  || symbol.equals(INPUT_X_SYMBOL) ||
                     symbol.equals(INPUT_SLASH_SYMBOL) || symbol.equals(INPUT_PLUS_STRING) || symbol.equals(INPUT_MINUS_STRING) ||
@@ -70,15 +65,11 @@ public class CalcGold {
     }
 
     private static void validateArgsNumber(String[] args) {
-        if (args.length < 3) {
-            out.println("Podałeś za mało argumentów!");
-            exit(VALIDATION_EXIT_CODE);
-        }
-        if (args.length % 2 == 0) {
-            out.println("Podałeś nieprawidłową liczbę argumentów!");
-            exit(VALIDATION_EXIT_CODE);
-        }
+        isEven(args.length < 3, "Podałeś za mało argumentów!");
+        isEven(args.length % 2 == 0, "Podałeś nieprawidłową liczbę argumentów!");
     }
+
+
 
     private static String parseSymbol(String symbol) {
         switch (symbol) {
@@ -98,4 +89,4 @@ public class CalcGold {
                 return symbol;
         }
     }
-}
+ }
