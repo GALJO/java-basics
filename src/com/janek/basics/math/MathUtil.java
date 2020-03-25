@@ -67,6 +67,12 @@ public class MathUtil {
         }
     }
 
+    /**
+     * Checking if number even
+     *
+     * @param number number we want to check
+     * @return true or false
+     */
     public static boolean isEven(int number) {
         if (number % 2 == 0) {
             return true;
@@ -74,6 +80,12 @@ public class MathUtil {
         return false;
     }
 
+    /**
+     * Checking if string is number
+     *
+     * @param text string we want to check
+     * @return true or false
+     */
     public static boolean isNumber(String text) {
         try {
             parseDouble(text);
