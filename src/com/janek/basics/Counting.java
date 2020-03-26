@@ -1,6 +1,5 @@
 package com.janek.basics;
 
-import static java.lang.Integer.parseInt;
 import static java.lang.String.format;
 import static java.lang.System.*;
 
@@ -8,18 +7,17 @@ public class Counting {
     public static void main(String[] args) {
         validate(args.length);
 
-        int countNumber = parseIntSafely(args[0]);
-
-        out.print(format("%d --- ", countNumber));
-        for (int i = 0; !(i == countNumber); i++) {
-            out.print(format("%d, ", i));
+        long countNumber = parseLongSafely(args[0]);
+        long sum = 0;
+        for (long i = 1; i <= countNumber; i++) {
+            sum += i;
         }
-        out.print(format("%d.", countNumber));
+        out.print(format("= %d", sum));
     }
 
-    private static int parseIntSafely(String arg) {
+    private static long parseLongSafely(String arg) {
         try {
-            return parseInt(arg);
+            return Long.parseLong(arg);
         } catch (NumberFormatException e) {
             out.println("Podałeś niepoprawny argument!");
             exit(1);
