@@ -68,10 +68,10 @@ public class MathUtil {
     }
 
     /**
-     * Checking if number even
+     * Checks if the number is even
      *
      * @param number number we want to check
-     * @return true or false
+     * @return true if the number is even, otherwise false
      */
     public static boolean isEven(int number) {
         if (number % 2 == 0) {
@@ -81,10 +81,10 @@ public class MathUtil {
     }
 
     /**
-     * Checking if string is number
+     * Checks if the string is a number
      *
      * @param text string we want to check
-     * @return true or false
+     * @return true if the string is a number, otherwise false
      */
     public static boolean isNumber(String text) {
         try {
