@@ -8,11 +8,7 @@ public class Counting {
         validate(args.length);
 
         long countNumber = parseLongSafely(args[0]);
-        long sum = 0;
-        for (long i = 1; i <= countNumber; i++) {
-            sum += i;
-        }
-        out.print(format("= %d", sum));
+        out.println(format("= %d", getSumUpTo(countNumber)));
     }
 
     private static long parseLongSafely(String arg) {
@@ -31,4 +27,13 @@ public class Counting {
             exit(2);
         }
     }
+
+    private static long getSumUpTo(long ceilNumber) {
+        long sum = 0;
+        for (long i = 1; i <= ceilNumber; i++) {
+            sum += i;
+        }
+        return sum;
+    }
 }
+
