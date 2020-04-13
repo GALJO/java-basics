@@ -1,12 +1,7 @@
 package com.janek.basics.math;
 
-import com.janek.basics.CalcGold;
-
-import static com.janek.basics.CalcGold.VALIDATION_EXIT_CODE;
 import static java.lang.Double.parseDouble;
-import static java.lang.String.format;
-import static java.lang.System.exit;
-import static java.lang.System.out;
+import static java.lang.Long.parseLong;
 
 public class MathUtil {
 
@@ -68,15 +63,26 @@ public class MathUtil {
     }
 
     public static boolean isEven(int number) {
-        if (number % 2 == 0) {
-            return true;
-        }
-        return false;
+        return number % 2 == 0;
     }
 
-    public static boolean isNumber(String text) {
+    public static boolean isDouble(String text) {
         try {
             parseDouble(text);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Checks if given text is long number
+     * @param text text to check
+     * @return true when number is long, otherwise false
+     */
+    public static boolean isLong(String text) {
+        try {
+            parseLong(text);
         } catch (NumberFormatException e) {
             return false;
         }

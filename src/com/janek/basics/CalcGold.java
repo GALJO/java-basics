@@ -47,7 +47,7 @@ public class CalcGold {
     private static void validateNumber(String[] args) {
         for (int i = 0; i < args.length; i += 2) {
             String number = args[i];
-            if (!isNumber(number)) {
+            if (!isDouble(number)) {
                 out.println(format("Podałeś nieprawidłową liczbę! (%s)", number));
                 exit(VALIDATION_EXIT_CODE);
             }
