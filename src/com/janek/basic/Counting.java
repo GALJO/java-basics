@@ -1,6 +1,6 @@
-package com.janek.basics;
+package com.janek.basic;
 
-import static com.janek.basics.math.MathUtil.isLong;
+import static com.janek.lib.math.MathUtil.isLong;
 import static java.lang.Long.parseLong;
 import static java.lang.String.format;
 import static java.lang.System.*;

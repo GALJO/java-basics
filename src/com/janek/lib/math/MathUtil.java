@@ -1,4 +1,4 @@
-package com.janek.basics.math;
+package com.janek.lib.math;
 
 import static java.lang.Double.parseDouble;
 import static java.lang.Long.parseLong;

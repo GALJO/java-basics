@@ -1,4 +1,4 @@
-package com.janek.basics;
+package com.janek.basic;
 
 public class LongLesson {
 

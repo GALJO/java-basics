@@ -1,6 +1,6 @@
-package com.janek.basics;
+package com.janek.calculator;
 
-import static com.janek.basics.math.MathUtil.*;
+import static com.janek.lib.math.MathUtil.*;
 import static java.lang.Double.parseDouble;
 import static java.lang.String.format;
 import static java.lang.System.exit;
@@ -60,9 +60,8 @@ public class CalcPremium {
 
     private static void validate(String[] args) {
         if (args.length < 3) {
-            out.println(
-                    format("Podałeś za mało argumentów. Potrzebne są 3 argumenty: liczba, znak działania " +
-                            "(lub pisemną formę) i druga liczba.")
+            out.println("Podałeś za mało argumentów. Potrzebne są 3 argumenty: liczba, znak działania " +
+                            "(lub pisemną formę) i druga liczba."
             );
             exit(1);
         }

@@ -1,6 +1,6 @@
-package com.janek.basics;
+package com.janek.calculator;
 
-import static com.janek.basics.math.MathUtil.*;
+import static com.janek.lib.math.MathUtil.*;
 import static java.lang.Double.parseDouble;
 import static java.lang.String.format;
 import static java.lang.System.exit;
