@@ -1,5 +1,13 @@
 package com.janek.basics.math;
 
+import com.janek.basics.CalcGold;
+
+import static com.janek.basics.CalcGold.VALIDATION_EXIT_CODE;
+import static java.lang.Double.parseDouble;
+import static java.lang.String.format;
+import static java.lang.System.exit;
+import static java.lang.System.out;
+
 public class MathUtil {
 
     public static final String PLUS = "+";
@@ -57,5 +65,33 @@ public class MathUtil {
             default:
                 throw new IllegalArgumentException("Unsupported symbol");
         }
+    }
+
+    /**
+     * Checks if the number is even
+     *
+     * @param number number we want to check
+     * @return true if the number is even, otherwise false
+     */
+    public static boolean isEven(int number) {
+        if (number % 2 == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Checks if the string is a number
+     *
+     * @param text string we want to check
+     * @return true if the string is a number, otherwise false
+     */
+    public static boolean isNumber(String text) {
+        try {
+            parseDouble(text);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
     }
 }
