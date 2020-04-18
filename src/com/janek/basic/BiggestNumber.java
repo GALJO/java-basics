@@ -1,6 +1,5 @@
 package com.janek.basic;
 
-import static com.janek.lib.math.MathUtil.doCalculation;
 import static com.janek.lib.math.MathUtil.isDouble;
 import static java.lang.Double.parseDouble;
 import static java.lang.String.format;
@@ -8,6 +7,7 @@ import static java.lang.System.exit;
 import static java.lang.System.out;
 
 public class BiggestNumber {
+
     public static void main(String[] args) {
         validate(args);
 
@@ -26,16 +26,23 @@ public class BiggestNumber {
     }
 
     private static void validate(String[] args) {
+        validateNotEmpty(args);
+        validateOnlyNumbers(args);
+    }
+
+    private static void validateNotEmpty(String[] args) {
+        if (args.length == 0) {
+            out.println("Nie podałeś argumentów!");
+            exit(2);
+        }
+    }
+
+    private static void validateOnlyNumbers(String[] args) {
         for (String element : args) {
             if (!isDouble(element)) {
                 out.println(format("Niepoprawny element! (%s)", element));
                 exit(1);
             }
-        }
-
-        if (args.length == 0) {
-            out.println("Nie podałeś argumentów!");
-            exit(2);
         }
     }
 }
