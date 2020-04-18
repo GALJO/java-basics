@@ -34,26 +34,6 @@ public class BiggestandLowestNumber {
         return new MinMaxResult(minNumber, maxNumber);
     }
 
-    private static double getMinNumber(String[] args) {
-        double minNumber = parseDouble(args[0]);
-        for (int i = 1; i < args.length; i++) {
-            if (minNumber > parseDouble(args[i])) {
-                minNumber = parseDouble(args[i]);
-            }
-        }
-        return minNumber;
-    }
-
-    private static double getMaxNumber(String[] args) {
-        double maxNumber = parseDouble(args[0]);
-        for (int i = 1; i < args.length; i++) {
-            if (maxNumber < parseDouble(args[i])) {
-                maxNumber = parseDouble(args[i]);
-            }
-        }
-        return maxNumber;
-    }
-
     private static void validate(String[] args) {
         validateNotEmpty(args);
         validateOnlyNumbers(args);
