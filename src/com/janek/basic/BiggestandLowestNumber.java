@@ -19,17 +19,16 @@ public class BiggestandLowestNumber {
     }
 
     private static MinMaxResult getMinMaxNumber(String[] args) {
-        double parsed0Args = parseDouble(args[0]);
-        double minNumber = parsed0Args;
-        double maxNumber = parsed0Args;
+        double minNumber = parseDouble(args[0]);
+        double maxNumber = minNumber;
         for (int i = 1; i < args.length; i++) {
-            double parsedIArgs = parseDouble(args[i]);
-            if (minNumber > parsedIArgs) {
-                minNumber = parsedIArgs;
+            double number = parseDouble(args[i]);
+            if (minNumber > number) {
+                minNumber = number;
             }
 
-            if (maxNumber < parsedIArgs) {
-                maxNumber = parsedIArgs;
+            if (maxNumber < number) {
+                maxNumber = number;
             }
         }
         return new MinMaxResult(minNumber, maxNumber);
