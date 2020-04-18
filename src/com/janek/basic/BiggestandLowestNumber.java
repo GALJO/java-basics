@@ -65,24 +65,3 @@ public class BiggestandLowestNumber {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Na mnie nie zwracaj uwagi, ciiii
