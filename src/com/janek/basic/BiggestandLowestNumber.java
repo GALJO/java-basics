@@ -11,11 +11,28 @@ public class BiggestandLowestNumber {
     public static void main(String[] args) {
         validate(args);
 
-        double maxNumber = getMaxNumber(args);
-        double minNumber = getMinNumber(args);
-        out.print(format("Najmniejsza liczba z podanych to %f", minNumber));
-        out.print(format(", a największa to %f", maxNumber));
+        var result = getMinMaxNumber(args);
 
+        out.print(format("Najmniejsza liczba z podanych to %f", result.min));
+        out.print(format(", a największa to %f", result.max));
+
+    }
+
+    private static MinMaxResult getMinMaxNumber(String[] args) {
+        double parsed0Args = parseDouble(args[0]);
+        double minNumber = parsed0Args;
+        double maxNumber = parsed0Args;
+        for (int i = 1; i < args.length; i++) {
+            double parsedIArgs = parseDouble(args[i]);
+            if (minNumber > parsedIArgs) {
+                minNumber = parsedIArgs;
+            }
+
+            if (maxNumber < parsedIArgs) {
+                maxNumber = parsedIArgs;
+            }
+        }
+        return new MinMaxResult(minNumber, maxNumber);
     }
 
     private static double getMinNumber(String[] args) {
@@ -58,4 +75,35 @@ public class BiggestandLowestNumber {
             }
         }
     }
+
+    static class MinMaxResult {
+        private final double min;
+        private final double max;
+
+        MinMaxResult(double min, double max) {
+            this.min = min;
+            this.max = max;
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Na mnie nie zwracaj uwagi, ciiii
