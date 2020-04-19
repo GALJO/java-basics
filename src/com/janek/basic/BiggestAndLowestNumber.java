@@ -6,16 +6,14 @@ import static java.lang.String.format;
 import static java.lang.System.exit;
 import static java.lang.System.out;
 
-public class BiggestandLowestNumber {
+public class BiggestAndLowestNumber {
 
     public static void main(String[] args) {
         validate(args);
 
         var result = getMinMaxNumber(args);
 
-        out.print(format("Najmniejsza liczba z podanych to %f", result.min));
-        out.print(format(", a największa to %f", result.max));
-
+        out.println(format("Najmniejsza liczba z podanych to %f, a największa to %f", result.min, result.max));
     }
 
     private static MinMaxResult getMinMaxNumber(String[] args) {
