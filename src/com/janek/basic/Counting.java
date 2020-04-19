@@ -15,19 +15,17 @@ public class Counting {
         out.println(format("Suma liczb nieparzystych (takich co nie mają pary) od 1 do %d = %d", countNumber, getSumUpToNotEven(countNumber)));
     }
 
-    private static void validate(String[] args) {
+    static void validate(String[] args) {
         if (args.length == 0) {
-            out.println("Nie podałeś argumentów!");
-            exit(2);
+            throw new IllegalStateException("Nie podałeś argumentów!");
         }
 
         if (!isLong(args[0])) {
-            out.println("Podałeś niepoprawny argument!");
-            exit(1);
+            throw new IllegalStateException("Podałeś niepoprawny argument!");
         }
     }
 
-    private static long getSumUpTo(long ceilNumber) {
+    static long getSumUpTo(long ceilNumber) {
         long sum = 0;
         for (long i = 1; i <= ceilNumber; i++) {
             sum += i;
@@ -35,7 +33,7 @@ public class Counting {
         return sum;
     }
 
-    private static long getSumUpToEven(long ceilNumber) {
+    static long getSumUpToEven(long ceilNumber) {
         long sum = 0;
         for (long i = 2; i <= ceilNumber; i += 2) {
             sum += i;
@@ -43,7 +41,7 @@ public class Counting {
         return sum;
     }
 
-    private static long getSumUpToNotEven(long ceilNumber) {
+    static long getSumUpToNotEven(long ceilNumber) {
         long sum = 0;
         for (long i = 1; i <= ceilNumber; i += 2) {
             sum += i;
