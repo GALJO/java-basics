@@ -6,11 +6,10 @@ import org.junit.jupiter.api.Test;
 import static com.janek.calculator.BasicCalc.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO add names
 class BasicCalcTest {
     @Test
-    @DisplayName("test")
-    void test1() {
+    @DisplayName("when input is correct should return double")
+    void parseDoublePositive() {
         // given
         String input = "5";
 
@@ -22,8 +21,8 @@ class BasicCalcTest {
     }
 
     @Test
-    @DisplayName("test")
-    void test2() {
+    @DisplayName("when input is incorrect should throw IllegalStateException")
+    void parseDoubleNegative() {
         // given
         String input = "k";
 
@@ -33,8 +32,8 @@ class BasicCalcTest {
     }
 
     @Test
-    @DisplayName("test")
-    void test3() {
+    @DisplayName("when input is correct should doesn't throw anything")
+    void validatePositive() {
         // given
         var input = new String[]{"5", "3"};
 
@@ -43,8 +42,8 @@ class BasicCalcTest {
     }
 
     @Test
-    @DisplayName("test")
-    void test4() {
+    @DisplayName("when input is incorrect should throw IllegalStateException")
+    void validateNegative() {
         // given
         var input = new String[]{"1"};
 
