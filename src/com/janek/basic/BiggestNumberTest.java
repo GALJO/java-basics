@@ -6,12 +6,11 @@ import org.junit.jupiter.api.Test;
 import static com.janek.basic.BiggestNumber.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-//TODO make names
 class BiggestNumberTest {
 
     @Test
-    @DisplayName("test1")
-    void test1() {
+    @DisplayName("should return biggest number from input (80)")
+    void maxNumberPositive() {
         //given
         var input = new String[]{"55", "80", "10", "5", "-8", "15.5"};
 
@@ -23,8 +22,8 @@ class BiggestNumberTest {
     }
 
     @Test
-    @DisplayName("test2")
-    void test2() {
+    @DisplayName("when input isn't number should return NumberFormatException")
+    void maxNumberNegative() {
         //given
         var input = new String[]{"80", "10", "5", "c"};
 
@@ -33,8 +32,8 @@ class BiggestNumberTest {
     }
 
     @Test
-    @DisplayName("test3")
-    void test3() {
+    @DisplayName("should doesn't throw exception")
+    void validatePositive() {
         //given
         var input = new String[]{"80", "80", "4", "6.4"};
 
@@ -43,8 +42,8 @@ class BiggestNumberTest {
     }
 
     @Test
-    @DisplayName("test4")
-    void test4() {
+    @DisplayName("when input blank should return IllegalStateException")
+    void validateBlankNegative() {
         //given
         var input = new String[]{};
 
@@ -54,8 +53,8 @@ class BiggestNumberTest {
     }
 
     @Test
-    @DisplayName("test5")
-    void test5() {
+    @DisplayName("when input isn't number should return IllegalStateException")
+    void validateNumberNegative() {
         //given
         var input = new String[]{"8", "-4", "a", "7"};
 

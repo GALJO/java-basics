@@ -6,11 +6,10 @@ import org.junit.jupiter.api.Test;
 import static com.janek.basic.Counting.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-//TODO make names
 class CountingTest {
     @Test
-    @DisplayName("test1")
-    void test1() {
+    @DisplayName("when input is 5 should return sum of numbers to 5")
+    void getSumUpToPositive() {
         // given
         long input = 5;
 
@@ -22,8 +21,8 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("test2")
-    void test2() {
+    @DisplayName("when input is 5 should return sum of even numbers to 5")
+    void getSumUpTo_E_Positive() {
         // given
         long input = 5;
 
@@ -35,8 +34,8 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("test3")
-    void test3() {
+    @DisplayName("when input is 5 should return sum of not even numbers to 5")
+    void getSumUpTO_NE_Positive() {
         // given
         long input = 5;
 
@@ -48,8 +47,8 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("test4")
-    void test4() {
+    @DisplayName("when input correct should doesn't throw exception")
+    void validatePositive() {
         // given
         var input = new String[]{"5"};
 
@@ -58,8 +57,8 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("test5")
-    void test5() {
+    @DisplayName("when input blank should throw IllegalStateException")
+    void validateBlankNegative() {
         // given
         var input = new String[]{};
 
@@ -69,8 +68,8 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("test6")
-    void test6() {
+    @DisplayName("when input isn't number should throw IllegalStateException")
+    void validateNumberNegative() {
         // given
         var input = new String[]{"c"};
 
