@@ -25,20 +25,17 @@ public class BasicCalc {
         out.println(format("Iloraz tych liczb to: %f", divideNumbers(one, two)));
     }
 
-    private static double parseDoubleSafely(String arg) {
+    static double parseDoubleSafely(String arg) {
         try {
             return parseDouble(arg);
         } catch (NumberFormatException e) {
-            out.println(format("Podałeś argument \"%s\", który nie jest liczbą!", arg));
-            exit(2);
-            throw e;
+            throw new IllegalStateException(format("Podałeś argument \"%s\", który nie jest liczbą!", arg));
         }
     }
 
-    private static void validate(String[] args) {
+    static void validate(String[] args) {
         if (args.length < 2) {
-            out.println("Podałeś za mało argumentów! Poproszę 2 argumenty.");
-            exit(1);
+            throw new IllegalStateException("Podałeś za mało argumentów! Poproszę 2 argumenty.");
         }
     }
 

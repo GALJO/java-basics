@@ -15,7 +15,7 @@ public class BiggestNumber {
         out.println(format("Największa liczba z podanych to: %f", maxNumber));
     }
 
-    private static double getMaxNumber(String[] args) {
+    static double getMaxNumber(String[] args) {
         double maxNumber = parseDouble(args[0]);
         for (int i = 1; i < args.length; i++) {
             if (maxNumber < parseDouble(args[i])) {
@@ -25,23 +25,21 @@ public class BiggestNumber {
         return maxNumber;
     }
 
-    private static void validate(String[] args) {
+    static void validate(String[] args) {
         validateNotEmpty(args);
         validateOnlyNumbers(args);
     }
 
     private static void validateNotEmpty(String[] args) {
         if (args.length == 0) {
-            out.println("Nie podałeś argumentów!");
-            exit(2);
+            throw new IllegalStateException("Nie podałeś argumentów!");
         }
     }
 
     private static void validateOnlyNumbers(String[] args) {
         for (String element : args) {
             if (!isDouble(element)) {
-                out.println(format("Niepoprawny element! (%s)", element));
-                exit(1);
+                throw new IllegalStateException(format("Niepoprawny element! (%s)", element));
             }
         }
     }
