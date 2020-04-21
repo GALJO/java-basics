@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CountingTest {
     @Test
-    @DisplayName("when input is 5 should return sum of numbers to 5")
+    @DisplayName("getSumUp - when input is 5 should return sum of numbers to 5")
     void getSumUpToPositive() {
         // given
         long input = 5;
@@ -21,7 +21,7 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("when input is 5 should return sum of even numbers to 5")
+    @DisplayName("getSumUpE - when input is 5 should return sum of even numbers to 5")
     void getSumUpTo_E_Positive() {
         // given
         long input = 5;
@@ -34,7 +34,7 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("when input is 5 should return sum of not even numbers to 5")
+    @DisplayName("getSumUpNE - when input is 5 should return sum of not even numbers to 5")
     void getSumUpTO_NE_Positive() {
         // given
         long input = 5;
@@ -47,7 +47,7 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("when input correct should doesn't throw exception")
+    @DisplayName("valid - when input correct should doesn't throw exception")
     void validatePositive() {
         // given
         var input = new String[]{"5"};
@@ -57,7 +57,7 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("when input blank should throw IllegalStateException")
+    @DisplayName("valid - when input blank should throw IllegalStateException")
     void validateBlankNegative() {
         // given
         var input = new String[]{};
@@ -68,7 +68,7 @@ class CountingTest {
     }
 
     @Test
-    @DisplayName("when input isn't number should throw IllegalStateException")
+    @DisplayName("valid - when input isn't number should throw IllegalStateException")
     void validateNumberNegative() {
         // given
         var input = new String[]{"c"};

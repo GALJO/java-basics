@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BiggestNumberTest {
 
     @Test
-    @DisplayName("should return biggest number from input (80)")
+    @DisplayName("maxNum - should return biggest number from input (80)")
     void maxNumberPositive() {
         //given
         var input = new String[]{"55", "80", "10", "5", "-8", "15.5"};
@@ -22,7 +22,7 @@ class BiggestNumberTest {
     }
 
     @Test
-    @DisplayName("when input isn't number should return NumberFormatException")
+    @DisplayName("maxNum - when input isn't number should return NumberFormatException")
     void maxNumberNegative() {
         //given
         var input = new String[]{"80", "10", "5", "c"};
@@ -32,7 +32,7 @@ class BiggestNumberTest {
     }
 
     @Test
-    @DisplayName("should doesn't throw exception")
+    @DisplayName("valid - should doesn't throw exception")
     void validatePositive() {
         //given
         var input = new String[]{"80", "80", "4", "6.4"};
@@ -42,7 +42,7 @@ class BiggestNumberTest {
     }
 
     @Test
-    @DisplayName("when input blank should return IllegalStateException")
+    @DisplayName("valid - when input blank should return IllegalStateException")
     void validateBlankNegative() {
         //given
         var input = new String[]{};
@@ -53,7 +53,7 @@ class BiggestNumberTest {
     }
 
     @Test
-    @DisplayName("when input isn't number should return IllegalStateException")
+    @DisplayName("valid - when input isn't number should return IllegalStateException")
     void validateNumberNegative() {
         //given
         var input = new String[]{"8", "-4", "a", "7"};
