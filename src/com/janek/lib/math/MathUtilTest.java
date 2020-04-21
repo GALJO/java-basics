@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MathUtilTest {
     @Test
-    @DisplayName("should return one + two")
+    @DisplayName("addNumbers - should return one + two")
     void addNumbersTest() {
         // given
         double one = 5;
@@ -22,7 +22,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("should return one - two")
+    @DisplayName("subNumbers - should return one - two")
     void subtractNumbersTest() {
         // given
         double one = 5;
@@ -36,7 +36,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("should return one * two")
+    @DisplayName("multiNumbers - should return one * two")
     void multiplyNumbersTest() {
         // given
         double one = 5;
@@ -50,7 +50,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("should return one / two")
+    @DisplayName("divNumbers - should return one / two")
     void divideNumbersTest() {
         // given
         double one = 6;
@@ -64,7 +64,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("should return one + two (doCalculation)")
+    @DisplayName("doCalc - should return one + two (doCalculation)")
     void doCalculationPlusTest() {
         //given
         double one = 8;
@@ -79,7 +79,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("should return one - two (doCalculation)")
+    @DisplayName("doCalc - should return one - two (doCalculation)")
     void doCalculationMinusTest() {
         //given
         double one = 8;
@@ -94,7 +94,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("should return one * two (doCalculation)")
+    @DisplayName("doCalc - should return one * two (doCalculation)")
     void doCalculationMultiplyTest() {
         //given
         double one = 8;
@@ -109,7 +109,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("should return one / two (doCalculation)")
+    @DisplayName("doCalc - should return one / two (doCalculation)")
     void doCalculationDivideTest() {
         //given
         double one = 8;
@@ -124,7 +124,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("when symbol isn't correct should throw IllegalArgumentException")
+    @DisplayName("doCalc - when symbol isn't correct should throw IllegalArgumentException")
     void doCalculationNegative() {
         // given
         double one = 8;
@@ -137,7 +137,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("when number is even should return true")
+    @DisplayName("isEven - when number is even should return true")
     void isEvenPositive() {
         // given
         int number = 2;
@@ -150,7 +150,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("when number isn't even should return false")
+    @DisplayName("isEven - when number isn't even should return false")
     void isEvenNegative() {
         // given
         int number = 3;
@@ -163,7 +163,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("when text can be double should return true")
+    @DisplayName("isDouble - when text can be double should return true")
     void isDoublePositive() {
         // given
         String text = "5";
@@ -176,7 +176,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("when text can't be double should return false")
+    @DisplayName("isDouble - when text can't be double should return false")
     void isDoubleNegative() {
         // given
         String text = "o";
@@ -189,7 +189,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("when text can be long should return true")
+    @DisplayName("isLong - when text can be long should return true")
     void isLongPositive() {
         // given
         String text = "8";
@@ -202,7 +202,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("when text can't be double should return false")
+    @DisplayName("isLong - when text can't be double should return false")
     void isLongNegative() {
         // given
         String text = "g";
