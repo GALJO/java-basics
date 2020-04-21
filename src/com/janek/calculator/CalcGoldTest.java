@@ -6,12 +6,11 @@ import org.junit.jupiter.api.Test;
 import static com.janek.calculator.CalcGold.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO add names
 class CalcGoldTest {
 
     @Test
-    @DisplayName("test1")
-    void test1() {
+    @DisplayName("calcResult - should return result of operation in input (6)")
+    void calculateResultPositive() {
         // given
         var input = new String[]{"10", "+", "5", "-", "6", "*", "2", "/", "3"};
 
@@ -23,8 +22,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test2")
-    void test2() {
+    @DisplayName("valNumber - when even fields in input is number shouldn't throw exception")
+    void validateNumberPositive() {
         // given
         var input = new String[]{"5", "+", "2"};
 
@@ -33,8 +32,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test2")
-    void test3() {
+    @DisplayName("valNumber - when even fields in input isn't number should throw IllegalStateException")
+    void validateNumberNegative() {
         // given
         var input = new String[]{"o", "+", "2"};
 
@@ -44,8 +43,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test2")
-    void test4() {
+    @DisplayName("valNumber - when even fields in input isn't number should throw IllegalStateException")
+    void validateNumberNegative2() {
         // given
         var input = new String[]{"5", "+", "r"};
 
@@ -55,8 +54,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test3")
-    void test5() {
+    @DisplayName("valSymbol - when not even fields in input is math symbol shouldn't throw exception")
+    void validateSymbolPositive() {
         // given
         var input = new String[]{"5", "+", "5", "-", "8", "*", "5", "/", "2"};
 
@@ -65,8 +64,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test3")
-    void test6() {
+    @DisplayName("valSymbol - when not even field in input isn't math symbol should throw IllegalStateException")
+    void validateSymbolNegative() {
         // given
         var input = new String[]{"5", "*", "8", "x", "2", "^", "6"};
 
@@ -77,8 +76,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test4")
-    void test7() {
+    @DisplayName("valArgs - when input.length is not even and input.length >= 3 shouldn't throw exception")
+    void validateArgsPositive() {
         // given
         var input = new String[]{"5", "+", "5", "-", "5", "*", "5", "/", "5"};
 
@@ -87,8 +86,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test4")
-    void test8() {
+    @DisplayName("valArgs - when input.length < 3 should throw IllegalStateException")
+    void validateArgsLengthNegative() {
         // given
         var input = new String[]{"5", "+"};
 
@@ -98,8 +97,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test4")
-    void test9() {
+    @DisplayName("valArgs - when input.length is even should throw IllegalStateException")
+    void validateArgsEvenNegative() {
         // given
         var input = new String[]{"5", "+", "8", "-"};
 
@@ -109,8 +108,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test5")
-    void test10() {
+    @DisplayName("parseSymbol - when input is + should return +")
+    void parseSymbolPositive1() {
         // given
         String input = "+";
 
@@ -122,8 +121,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test5")
-    void test11() {
+    @DisplayName("parseSymbol - when input is - should return -")
+    void parseSymbolPositive2() {
         // given
         String input = "-";
 
@@ -135,8 +134,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test5")
-    void test12() {
+    @DisplayName("parseSymbol - when input is x should return *")
+    void parseSymbolPositive3() {
         // given
         String input = "x";
 
@@ -148,8 +147,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test5")
-    void test13() {
+    @DisplayName("parseSymbol - when input is / should return /")
+    void parseSymbolPositive4() {
         // given
         String input = "/";
 
@@ -161,8 +160,8 @@ class CalcGoldTest {
     }
 
     @Test
-    @DisplayName("test5")
-    void test14() {
+    @DisplayName("parseSymbol - when input is other should return input")
+    void parseSymbolNegative() {
         // given
         String input = "k";
 
