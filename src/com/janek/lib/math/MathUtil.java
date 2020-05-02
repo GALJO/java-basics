@@ -100,4 +100,20 @@ public class MathUtil {
         }
         return true;
     }
+
+    public static double power(double base, int exponent) {
+        if(exponent == 0) {
+            return 0;
+        }
+
+        if(exponent == 1) {
+            return base;
+        }
+
+        double power = multiplyNumbers(base, base);
+        for (int i = 2; i < exponent; i++) {
+            power = multiplyNumbers(power, base);
+        }
+        return power;
+    }
 }

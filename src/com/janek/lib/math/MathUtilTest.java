@@ -213,4 +213,46 @@ class MathUtilTest {
         // then
         assertFalse(result);
     }
+
+    @Test
+    @DisplayName("power - if its calculating correctly")
+    void powerZero() {
+        //given
+        double one = 5;
+        int two = 0;
+
+        // when
+        var result = power(one, two);
+
+        // then
+        assertEquals(0, result);
+    }
+
+    @Test
+    @DisplayName("power - if its calculating correctly")
+    void powerOne() {
+        //given
+        double one = 5;
+        int two = 1;
+
+        // when
+        var result = power(one, two);
+
+        // then
+        assertEquals(one, result);
+    }
+
+    @Test
+    @DisplayName("power - if its calculating correctly")
+    void powerElse() {
+        //given
+        double one = 2;
+        int two = 4;
+
+        // when
+        var result = power(one, two);
+
+        // then
+        assertEquals(16, result);
+    }
 }
