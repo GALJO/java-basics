@@ -7,6 +7,21 @@ import static com.janek.lib.math.MathUtil.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MathUtilTest {
+
+    /*
+        addNumbers - 1 test
+        subtractNumbers - 1 test
+        multiplyNumbers - 1 test
+        divideNumbers - 1 test
+        power - 4 tests
+        doCalculation - 5 tests
+
+        isEven - 2 tests
+        isInt - 2 tests
+        isDouble - 2 tests
+        isLong - 2 tests
+    */
+
     @Test
     @DisplayName("addNumbers - should return one + two")
     void addNumbersTest() {
@@ -61,6 +76,62 @@ class MathUtilTest {
 
         // then
         assertEquals(2, result);
+    }
+
+    @Test
+    @DisplayName("power - if its calculating correctly")
+    void powerZero() {
+        //given
+        double one = 5;
+        int two = 0;
+
+        // when
+        var result = power(one, two);
+
+        // then
+        assertEquals(0, result);
+    }
+
+    @Test
+    @DisplayName("power - if its calculating correctly")
+    void powerOne() {
+        //given
+        double one = 5;
+        int two = 1;
+
+        // when
+        var result = power(one, two);
+
+        // then
+        assertEquals(one, result);
+    }
+
+    @Test
+    @DisplayName("power - if its calculating correctly")
+    void powerElse() {
+        //given
+        double one = 2;
+        int two = 4;
+
+        // when
+        var result = power(one, two);
+
+        // then
+        assertEquals(16, result);
+    }
+
+    @Test
+    @DisplayName("power - if its calculating correctly")
+    void powerDouble() {
+        //given
+        double one = 1.5;
+        int two = 3;
+
+        // when
+        var result = power(one, two);
+
+        // then
+        assertEquals(3.375, result);
     }
 
     @Test
@@ -163,6 +234,33 @@ class MathUtilTest {
     }
 
     @Test
+    @DisplayName("isInt - when text can be double should return true")
+    void isIntPositive() {
+        // given
+        String text = "5";
+
+        // when
+        var result = isInt(text);
+
+        // then
+        assertTrue(result);
+    }
+
+    @Test
+    @DisplayName("isInt - when text can't be double should return false")
+    void isIntNegative() {
+        // given
+        String text = "o";
+
+        // when
+        var result = isInt(text);
+
+        // then
+        assertFalse(result);
+    }
+
+
+    @Test
     @DisplayName("isDouble - when text can be double should return true")
     void isDoublePositive() {
         // given
@@ -212,47 +310,5 @@ class MathUtilTest {
 
         // then
         assertFalse(result);
-    }
-
-    @Test
-    @DisplayName("power - if its calculating correctly")
-    void powerZero() {
-        //given
-        double one = 5;
-        int two = 0;
-
-        // when
-        var result = power(one, two);
-
-        // then
-        assertEquals(0, result);
-    }
-
-    @Test
-    @DisplayName("power - if its calculating correctly")
-    void powerOne() {
-        //given
-        double one = 5;
-        int two = 1;
-
-        // when
-        var result = power(one, two);
-
-        // then
-        assertEquals(one, result);
-    }
-
-    @Test
-    @DisplayName("power - if its calculating correctly")
-    void powerElse() {
-        //given
-        double one = 2;
-        int two = 4;
-
-        // when
-        var result = power(one, two);
-
-        // then
-        assertEquals(16, result);
     }
 }
