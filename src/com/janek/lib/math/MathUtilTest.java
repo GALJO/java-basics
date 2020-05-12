@@ -79,7 +79,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("power - if its calculating correctly")
+    @DisplayName("power - when exponent is zero should return zero")
     void powerZero() {
         //given
         double one = 5;
@@ -93,7 +93,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("power - if its calculating correctly")
+    @DisplayName("power - when exponent is 1 should return base")
     void powerOne() {
         //given
         double one = 5;
@@ -121,7 +121,7 @@ class MathUtilTest {
     }
 
     @Test
-    @DisplayName("power - if its calculating correctly")
+    @DisplayName("power - if its calculating double correctly")
     void powerDouble() {
         //given
         double one = 1.5;

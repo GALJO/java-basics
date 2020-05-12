@@ -42,16 +42,17 @@ public class MathUtil {
 
     /**
      * Calculate power
-     * @param base base of power
+     *
+     * @param base     base of power
      * @param exponent exponent of power
      * @return result of power with given numbers
      */
     public static double power(double base, int exponent) {
-        if(exponent == 0) {
+        if (exponent == 0) {
             return 0;
         }
 
-        if(exponent == 1) {
+        if (exponent == 1) {
             return base;
         }
 
@@ -127,6 +128,7 @@ public class MathUtil {
 
     /**
      * Checks if given text is long number
+     *
      * @param text text to check
      * @return true when number is long, otherwise false
      */
