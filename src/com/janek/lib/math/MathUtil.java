@@ -1,6 +1,7 @@
 package com.janek.lib.math;
 
 import static java.lang.Double.parseDouble;
+import static java.lang.Integer.parseInt;
 import static java.lang.Long.parseLong;
 
 public class MathUtil {
@@ -40,6 +41,29 @@ public class MathUtil {
 
 
     /**
+     * Calculate power
+     *
+     * @param base     base of power
+     * @param exponent exponent of power
+     * @return result of power with given numbers
+     */
+    public static double power(double base, int exponent) {
+        if (exponent == 0) {
+            return 0;
+        }
+
+        if (exponent == 1) {
+            return base;
+        }
+
+        double power = multiplyNumbers(base, base);
+        for (int i = 2; i < exponent; i++) {
+            power = multiplyNumbers(power, base);
+        }
+        return power;
+    }
+
+    /**
      * Calculates numbers
      *
      * @param one    first number
@@ -73,6 +97,21 @@ public class MathUtil {
     }
 
     /**
+     * Checks if the string is a int number
+     *
+     * @param text string we want to check
+     * @return true if the string is a number, otherwise false
+     */
+    public static boolean isInt(String text) {
+        try {
+            parseInt(text);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
      * Checks if the string is a number
      *
      * @param text string we want to check
@@ -89,6 +128,7 @@ public class MathUtil {
 
     /**
      * Checks if given text is long number
+     *
      * @param text text to check
      * @return true when number is long, otherwise false
      */
